@@ -1,9 +1,9 @@
 const express = require("express");
 const db = require("./db");
-const Model = require("./image/model");
+const imageRouter = require("./image/router");
 
 const app = express();
-
+app.use(imageRouter);
 const port = process.env.PORT || 4000;
 
 app.listen(

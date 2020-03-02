@@ -18,4 +18,13 @@ router.get("/image", async (req, res, next) => {
   }
 });
 
+router.post("/image", async (req, res, next) => {
+  try {
+    const newImage = await Image.create(req.body);
+    res.status(201).json(newImage);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
